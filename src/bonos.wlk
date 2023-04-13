@@ -2,10 +2,9 @@ import categorias.*
 
 object  bonoPorcentaje {
 	method monto(empleado){
-		return empleado.neto() * 10 / 100 // o 0.1
+		return empleado.getCategoria().neto() * 10 / 100 // o 0.1
 	}
 }
-
 
 object bonoFijo {
 	method monto(empleado){
@@ -15,7 +14,7 @@ object bonoFijo {
 
 object bonoDependeFaltas{
 	method monto(empleado){
-		const faltas = empleado.faltas()
+		const faltas = empleado.getCantFaltas()
 		if (faltas == 0){
 			return 100
 		}

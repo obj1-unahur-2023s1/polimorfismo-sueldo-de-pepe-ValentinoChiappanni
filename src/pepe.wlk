@@ -17,17 +17,24 @@ object pepe{
 	}
 	method getBonoResultado() = bonoResultado
 	method setBonoResultado(bono) {
-		bonoResultado = bono
+		if (bono != bonoDependeFaltas){
+			bonoResultado = bono
+		}
 	}
 	method getCantFaltas() = cantFaltas
 	method setCantFaltas(faltas) {
 		cantFaltas = faltas
 	}
+	//Otra maner sin return
+	method sueldoNeto() = categoria.neto()
+	/* 
 	method sueldoNeto(){
-		//COMPLETAR
+		return categoria.neto()
 	}
+	* */
+	
 	
 	method sueldo(){
-		//COMPLETAR
+		return self.sueldoNeto() + bonoPresentismo.monto(self) + bonoResultado.monto(self)
 	}
 }
