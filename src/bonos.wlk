@@ -7,8 +7,6 @@ object  bonoPorcentaje {
 }
 
 
-
-
 object bonoFijo {
 	method monto(empleado){
 		return 80
